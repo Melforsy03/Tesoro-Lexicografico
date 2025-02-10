@@ -1,0 +1,176 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{hyperref}
+\usepackage{enumitem}
+
+\title{Desarrollo de una Aplicación Web para la Edición y Visualización de un Tesoro Lexicográfico}
+\author{}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\section{Levantamiento de Requerimientos}
+
+\subsection{Requerimientos Funcionales}
+
+\subsubsection{Módulo de Gestión de Datos}
+
+\paragraph{Importación de XML-TEI TLEAM}
+\begin{itemize}
+    \item Subida y validación de archivos XML con estructura TEI.
+    \item Procesamiento y almacenamiento en la base de datos.
+    \item Reporte de estado con errores y advertencias.
+\end{itemize}
+
+\paragraph{Entrada Manual de Datos}
+\begin{itemize}
+    \item Formulario con los siguientes campos:
+    \begin{itemize}
+        \item Palabra o entrada
+        \item Definición
+        \item Ejemplos de uso
+        \item Referencias cruzadas
+        \item Metadatos adicionales
+    \end{itemize}
+    \item Validación y guardado automático.
+\end{itemize}
+
+\paragraph{OCR desde PDF}
+\begin{itemize}
+    \item Subir archivos PDF.
+    \item Seleccionar subimagen dentro del PDF.
+    \item Aplicar OCR y extraer texto editable.
+    \item Edición manual del texto extraído antes de guardarlo.
+\end{itemize}
+
+\paragraph{Importación del Tesoro Lexicográfico Antiguo}
+\begin{itemize}
+    \item Conversión y adaptación de datos al nuevo formato.
+    \item Asociación automática de términos antiguos con nuevos.
+\end{itemize}
+
+\subsubsection{Módulo de Visualización}
+
+\paragraph{Interfaz de Búsqueda y Exploración de Términos}
+\begin{itemize}
+    \item Barra de búsqueda con filtros avanzados.
+    \item Resultados en lista con vista previa.
+\end{itemize}
+
+\paragraph{Visualización de una Entrada Lexicográfica}
+\begin{itemize}
+    \item Mostrar palabra clave, definición y referencias cruzadas.
+    \item Navegación entre términos relacionados.
+    \item Vista opcional del código XML-TEI.
+\end{itemize}
+
+\paragraph{Exportación de Datos}
+\begin{itemize}
+    \item Descarga de entradas en XML-TEI.
+    \item Exportación masiva en CSV, JSON, PDF.
+\end{itemize}
+
+\subsubsection{Módulo de Administración y Seguridad}
+
+\paragraph{Gestión de Usuarios y Roles}
+\begin{itemize}
+    \item Administrador: Control total.
+    \item Editor: Puede agregar y modificar entradas.
+    \item Lector: Solo visualización.
+    \item Usuario externo: Puede sugerir correcciones.
+\end{itemize}
+
+\paragraph{Autenticación y Seguridad}
+\begin{itemize}
+    \item Inicio de sesión seguro con encriptación.
+    \item Control de acceso basado en roles.
+    \item Registro de actividad de usuarios.
+\end{itemize}
+
+\paragraph{Historial de Cambios y Versiones}
+\begin{itemize}
+    \item Registro de modificaciones en cada entrada.
+    \item Posibilidad de revertir cambios.
+\end{itemize}
+
+\section{Maquetación y Prototipo}
+
+\subsection{Estructura de la Interfaz}
+
+\subsubsection{Pantallas Principales}
+
+\paragraph{Inicio / Página Principal}
+\begin{itemize}
+    \item Barra de búsqueda.
+    \item Accesos rápidos a categorías.
+\end{itemize}
+
+\paragraph{Exploración de Términos}
+\begin{itemize}
+    \item Lista de términos con vista previa.
+\end{itemize}
+
+\paragraph{Visualización de una Entrada}
+\begin{itemize}
+    \item Información estructurada del término.
+    \item Referencias cruzadas.
+    \item Exportación en XML.
+\end{itemize}
+
+\paragraph{Editor de Entradas}
+\begin{itemize}
+    \item Formulario estructurado.
+    \item Edición en HTML o TEI-XML.
+    \item Historial de versiones.
+\end{itemize}
+
+\paragraph{Importación de Datos}
+\begin{itemize}
+    \item Subida de XML-TEI y PDF.
+    \item Validación de errores.
+\end{itemize}
+
+\paragraph{OCR y Selección de Imagen}
+\begin{itemize}
+    \item Subida de PDF.
+    \item Herramienta de selección de imagen.
+    \item Corrección manual del OCR.
+\end{itemize}
+
+\paragraph{Administración de Usuarios}
+\begin{itemize}
+    \item Gestión de roles.
+    \item Registro de actividad.
+\end{itemize}
+
+\subsection{Herramientas para el Prototipo}
+\begin{itemize}
+    \item Figma (recomendado).
+    \item Adobe XD.
+    \item Balsamiq.
+\end{itemize}
+
+\section{Tecnologías Recomendadas}
+
+\textbf{Frontend:}
+\begin{itemize}
+    \item React.js o Vue.js.
+    \item TailwindCSS o Bootstrap.
+\end{itemize}
+
+\textbf{Backend:}
+\begin{itemize}
+    \item Node.js con Express o Django con Python.
+    \item PostgreSQL o MongoDB.
+\end{itemize}
+
+\textbf{OCR y TEI-XML:}
+\begin{itemize}
+    \item Tesseract.js para OCR.
+    \item Python + OCRmyPDF para PDFs.
+    \item XSLT o lxml para XML-TEI.
+\end{itemize}
+
+\end{document}

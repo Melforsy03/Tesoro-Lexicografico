@@ -1,0 +1,455 @@
+/* Estilos generales */
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f8f9fa;
+  color: #333;
+  line-height: 1.6;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+header {
+  background-color:#0960ae;
+  padding: 15px 20px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo-img {
+  width: 50px;
+  height: auto;
+  margin-right: 15px;
+  border-radius: 8px;
+}
+
+h1 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: whitesmoke;
+  margin: 0;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  margin: 0;
+}
+
+nav ul li {
+  margin-left: 20px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #2c3e50;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+  color: #007bff;
+}
+
+.sidebar-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+/* Buscador */
+.search {
+  background-color: #e9ecef;
+  padding: 20px 0;
+  text-align: center;
+  width: 100%;
+}
+
+.search-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 70%;
+  margin: 0 auto;
+  margin-bottom: 30px;
+}
+
+.search-container input {
+  padding: 12px;
+  width: 70%;
+  border: 1px solid #ddd;
+  border-radius: 8px 0 0 8px;
+  font-size: 1rem;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+.search-container input:focus {
+  border-color: #007bff;
+}
+
+.search-container button {
+  padding: 12px 20px;
+  border: none;
+  background-color: #007bff;
+  color: white;
+  border-radius: 0 8px 8px 0;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+  margin-left: -1px;
+}
+
+.search-container button:hover {
+  background-color: #0056b3;
+}
+
+.suggestions {
+  position: absolute;
+  top: 26%;
+  left: 21%;
+  width: 50%;
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  max-height: 200px;
+  overflow-y: auto;
+  z-index: 9999;
+  display: none;
+}
+
+.suggestion-item {
+  padding: 3px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.suggestion-item:hover {
+  background-color: #f1f1f1;
+}
+
+.suggestion-item.ver-todos {
+  display: flex;
+  align-items: center;
+  color: #007bff;
+  font-weight: 600;
+  padding: 8px;
+  cursor: pointer;
+}
+
+.suggestion-item.ver-todos i {
+  margin-right: 8px;
+}
+
+/* Contenedor principal */
+.content-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  max-width: 1200px;
+  margin: 20px auto;
+  gap: 20px;
+  padding: 0 20px;
+}
+
+.main-container {
+  width: 100%; /* Ocupa todo el ancho inicialmente */
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+/* Estado inicial: sidebar-section en el main-container */
+.main-container .sidebar-section {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Dos columnas */
+  gap: 20px;
+  width: 100%;
+}
+/* Estilo para cada sección */
+.sidebar-section > div {
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 15px;
+  text-align: center;
+}
+/* Animación para mover las secciones a la derecha */
+.sidebar-section > div {
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 15px;
+  text-align: center;
+  transition: transform 0.5s ease, opacity 0.5s ease;
+}
+
+/* Estado inicial: las secciones están en su posición normal */
+.main-container .sidebar-section > div {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+/* Estado con búsqueda: las secciones se mueven a la derecha */
+body.busqueda-realizada .main-container .sidebar-section > div {
+  transform: translateX(120%); /* Mueve las secciones fuera de la pantalla */
+  opacity: 0; /* Las hace invisibles */
+}
+
+/* Barra lateral derecha (inicialmente oculta) */
+.sidebar-right {
+  display: none; /* Oculto inicialmente */
+  width: 35%;
+  flex-direction: column;
+  gap: 20px;
+  transition: opacity 0.5s ease;
+}
+
+/* Estado con búsqueda: muestra la barra lateral */
+body.busqueda-realizada .sidebar-right {
+  display: flex; /* Muestra la barra lateral */
+  opacity: 1; /* Hace visible la barra lateral */
+}
+
+/* Animación para las secciones en la barra lateral */
+.sidebar-right > div {
+  transform: translateX(-100%); /* Inicia fuera de la pantalla */
+  opacity: 0; /* Inicia invisible */
+  transition: transform 0.5s ease, opacity 0.5s ease;
+}
+
+body.busqueda-realizada .sidebar-right > div {
+  transform: translateX(0); /* Mueve las secciones a su posición */
+  opacity: 1; /* Las hace visibles */
+}
+.sidebar-section h3 {
+  font-size: 1.2rem;
+  color: #2c3e50;
+  margin-bottom: 10px;
+}
+
+.grid-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 5px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.grid-list li {
+  background-color: #f8f9fa;
+  padding: 5px;
+  border-radius: 3px;
+  text-align: center;
+  font-weight: bold;
+  color: #2c3e50;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.grid-list li:hover {
+  background-color: #007bff;
+  color: white;
+  cursor: pointer;
+}
+
+
+
+/* Resultados de Búsqueda */
+.results {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.result-item {
+  padding: 10px 0;
+  border-bottom: 2px solid #ddd;
+}
+
+.result-item h2 {
+  font-size: 1.5rem;
+  color: #2c3e50;
+  margin-bottom: 5px;
+}
+
+.result-item p {
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.5;
+}
+
+.result-item:last-child {
+  border-bottom: none;
+}
+
+/* Footer */
+/* 🔹 Estilos generales del Footer */
+footer {
+  background-color:#0960ae;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  font-size: 0.9rem;
+  margin-top: auto;
+}
+
+/* 🔹 Contenedor del footer */
+.footer-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+/* 🔹 Menú del footer (fila de enlaces) */
+.footer-menu {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  padding: 0;
+  margin: 0;
+}
+
+/* 🔹 Estilos de los enlaces del menú */
+.footer-menu li {
+  display: inline;
+}
+
+.footer-menu a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.footer-menu a:hover {
+  color: #007bff;
+}
+
+/* 🔹 Imagen en el footer */
+.footer-image img {
+  width: 100%;
+  max-width: 100px; /* Ajusta el tamaño máximo */
+  border-radius: 8px;
+  opacity: 0.8;
+  transition: opacity 0.3s ease;
+}
+
+/* 🔹 Efecto hover en la imagen */
+.footer-image img:hover {
+  opacity: 1;
+}
+
+/* 🔹 Responsive: en móviles el menú se apila */
+@media (max-width: 768px) {
+  .footer-menu {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .footer-image img {
+    max-width: 300px;
+  }
+}
+
+
+/* 🔹 Cuando se realiza una búsqueda, mover las listas a la derecha */
+body.busqueda-realizada .main-container {
+  width: 65%; /* Reduce el ancho para dejar espacio al lado derecho */
+}
+
+body.busqueda-realizada .sidebar-right {
+  display: flex; /* Muestra la barra lateral a la derecha */
+  flex-direction: column;
+  gap: 15px;
+}
+
+body.busqueda-realizada .main-container .sidebar-section {
+  display: none; /* Oculta las listas en el main-container */
+}
+
+/* 🔹 Barra lateral derecha (inicialmente oculta) */
+.sidebar-right {
+  display: none;
+  width: 35%;
+}
+/* Responsive Design */
+@media (max-width: 768px) {
+  .content-wrapper {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .sidebar-right {
+    width: 100%;
+  }
+
+  .grid-list {
+    grid-template-columns: 1fr;
+  }
+
+  .sidebar-toggle {
+    display: block;
+  }
+
+  .sidebar-right {
+    display: none;
+  }
+
+  .sidebar-right.active {
+    display: flex;
+  }
+}
+/* 🔹 Franja informativa superior */
+.info-bar {
+  background-color: 	#3e8fd8; /* Azul destacado */
+  color: white;
+  text-align: center;
+  padding: 10px;
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+/* 🔹 Contenedor de las opciones debajo del buscador */
+.search-options {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 10px;
+}
+
+/* 🔹 Estilos de los botones de opciones */
+.search-option {
+  text-decoration: none;
+  color: #007bff;
+  font-weight: bold;
+  padding: 8px 15px;
+  border: 2px solid #007bff;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+
+/* 🔹 Efecto hover en las opciones */
+.search-option:hover {
+  background-color: #007bff;
+  color: white;
+}

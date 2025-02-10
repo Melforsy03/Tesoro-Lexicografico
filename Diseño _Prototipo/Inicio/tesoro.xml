@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+    <text>
+        <body>
+            <entry>
+                <form>
+                    <orth>Abacá</orth>
+                </form>
+                <sense>
+                    <def>Planta usada para fibras textiles.</def>
+                </sense>
+                <etym>
+                    <p>Del tagalo "abaka".</p>
+                </etym>
+            </entry>
+            <entry>
+                <form>
+                    <orth>Bohío</orth>
+                </form>
+                <sense>
+                    <def>Casa rural típica en Cuba.</def>
+                </sense>
+                <etym>
+                    <p>Del taíno "bohío".</p>
+                </etym>
+            </entry>
+            <entry>
+                <form>
+                    <orth>Caculeo</orth>
+                </form>
+                <sense>
+                    <def>Acción de moverse inquietamente o sin propósito fijo.</def>
+                </sense>
+                <etym>
+                    <p>Origen incierto, posiblemente afronegroide.</p>
+                </etym>
+            </entry>
+            <entry>
+                <form>
+                    <orth>Güije</orth>
+                </form>
+                <sense>
+                    <def>Ser mitológico cubano, representado como un duende acuático pequeño y travieso.</def>
+                </sense>
+                <etym>
+                    <p>De la tradición oral cubana.</p>
+                </etym>
+            </entry>
+            <entry>
+                <form>
+                    <orth>Jaba</orth>
+                </form>
+                <sense>
+                    <def>Bolsa o saco de tela, generalmente usado para cargar objetos.</def>
+                </sense>
+                <etym>
+                    <p>Del árabe "šabba".</p>
+                </etym>
+            </entry>
+            <entry>
+                <form>
+                    <orth>Majá</orth>
+                </form>
+                <sense>
+                    <def>Serpiente grande no venenosa, típica de Cuba.</def>
+                </sense>
+                <etym>
+                    <p>Del taíno "maja".</p>
+                </etym>
+            </entry>
+            <entry>
+                <form>
+                    <orth>Ñañigo</orth>
+                </form>
+                <sense>
+                    <def>Miembro de la sociedad secreta Abakuá en Cuba.</def>
+                </sense>
+                <etym>
+                    <p>Del efik "nyáñigo".</p>
+                </etym>
+            </entry>
+        </body>
+    </text>
+</TEI>

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tesoro Lexicográfico Cubano</title>
+  <link rel="stylesheet" href="diseño.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="logo">
+      <img src="Cuba.jpg" alt="Logo Tesoro Lexicográfico Cubano" class="logo-img">
+      <h1>Tesoro Lexicográfico Cubano</h1>
+    </div>
+    <button class="sidebar-toggle" onclick="toggleSidebar()">
+      <i class="fas fa-bars"></i>
+    </button>
+  </header>
+<!-- Franja superior sobre el campo de búsqueda -->
+<div class="info-bar">
+  <p>28,086 palabras y frases cubanas recogidas por 65 fuentes entre 1788 y 2025</p>
+  <div class="search-container">
+    <input type="text" id="search-input" placeholder="Buscar palabra o término">
+    <button id="search-button"><i class="fas fa-search"></i> Buscar</button>
+  </div>
+</div>
+ 
+
+  <!-- Franja inferior debajo del campo de búsqueda -->
+<div class="search-options">
+  <a href="#" class="search-option">Búsqueda avanzada</a>
+  <a href="#" class="search-option">Cómo usar Tesoro.cu</a>
+</div>
+
+  <div id="suggestions" class="suggestions"></div>
+
+  <!-- Contenedor principal para resultados y columnas -->
+  <div class="content-wrapper">
+    <div class="main-container">
+  
+        <!-- Secciones de listas dentro del main-container (inicialmente visibles) -->
+        <div class="sidebar-section">
+            <div>
+                <h3>Palabras más buscadas</h3>
+                <ul class="grid-list">
+                    <li>Abacá</li>
+                    <li>Bohío</li>
+                    <li>Cuba</li>
+                    <li>Caculeo</li>
+                    <li>Ñañigo</li>
+                </ul>
+            </div>
+            <div>
+                <h3>Temas más populares</h3>
+                <ul class="grid-list">
+                    <li>Historia</li>
+                    <li>Cultura</li>
+                    <li>Gastronomía</li>
+                    <li>Arte</li>
+                    <li>Lingüística</li>
+                </ul>
+            </div>
+            <div>
+                <h3>Palabras del día</h3>
+                <ul class="grid-list">
+                    <li>Jaba</li>
+                    <li>Majá</li>
+                    <li>Güije</li>
+                    <li>Aparecer</li>
+                    <li>Apagón</li>
+                </ul>
+            </div>
+            <div>
+                <h3>Palabras de interés</h3>
+                <ul class="grid-list">
+                    <li>Lexicografía</li>
+                    <li>Idioma</li>
+                    <li>Filología</li>
+                    <li>Traducción</li>
+                    <li>Neologismo</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Nueva barra lateral derecha (inicialmente vacía) -->
+    <aside class="sidebar-right" id="sidebar-right"></aside>
+</div>
+
+
+<!-- Footer Mejorado -->
+<footer>
+  <div class="footer-container">
+    <!-- Menú superior del footer -->
+    <ul class="footer-menu">
+      <li><a href="#">Sobre Tesoro.cu</a></li>
+      <li><a href="#">Todas las palabras</a></li>
+      <li><a href="#">Fuentes</a></li>
+      <li><a href="#">Suscríbete</a></li>
+      <li><a href="#">Contacto</a></li>
+    </ul>
+
+    <!-- Imagen decorativa -->
+    <div class="footer-image">
+      <img src="LogoAcademia.jpeg" alt="Tesoro Lexicográfico Cubano">
+    </div>
+
+    <!-- Texto de derechos de autor -->
+    <p>&copy; 2025 Tesoro Lexicográfico Cubano | Contacto: info@tesorocubano.com</p>
+  </div>
+</footer>
+
+
+  <script src="diseño.js"></script>
+</body>
+</html>
