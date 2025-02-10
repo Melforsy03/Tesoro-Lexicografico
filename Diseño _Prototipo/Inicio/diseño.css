@@ -368,7 +368,25 @@ footer {
     max-width: 300px;
   }
 }
+/* Responsive Design para el buscador */
+@media (max-width: 768px) {
+  .search-container {
+    flex-direction: column; /* Cambia la dirección a columna en móviles */
+    width: 90%; /* Aumenta el ancho para que ocupe más espacio */
+  }
 
+  .search-container input {
+    width: 100%; /* El campo de búsqueda ocupa todo el ancho */
+    border-radius: 8px; /* Bordes redondeados para el campo */
+    margin-bottom: 10px; /* Espacio entre el campo y el botón */
+  }
+
+  .search-container button {
+    width: 100%; /* El botón ocupa todo el ancho */
+    border-radius: 8px; /* Bordes redondeados para el botón */
+    margin-left: 0; /* Elimina el margen izquierdo */
+  }
+}
 
 /* 🔹 Cuando se realiza una búsqueda, mover las listas a la derecha */
 body.busqueda-realizada .main-container {
