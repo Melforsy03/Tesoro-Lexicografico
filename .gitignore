@@ -6,9 +6,9 @@ obj/
 *.user
 *.suo
 **.vs/
-/ASP.Net-backend/.vs/
+/ASP.Net-Backend/.vs/
 **/.cache/
-/TL.Api/appsettings.json
+/ASP.Net-Backend/TL.Api/appsettings.json
 # Archivos de VS Code
 .vscode/
 
