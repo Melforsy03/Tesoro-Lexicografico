@@ -8,7 +8,7 @@ obj/
 **.vs/
 /ASP.Net-backend/.vs/
 **/.cache/
-ASP.Net-Backend\TL.Api\appsettings.json
+/TL.Api/appsettings.json
 # Archivos de VS Code
 .vscode/
 
