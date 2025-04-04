@@ -1,0 +1,14 @@
+# Archivos de compilación
+bin/
+obj/
+
+# Archivos de usuario
+*.user
+*.suo
+
+# Archivos de VS Code
+.vscode/
+
+# Archivos del sistema
+Thumbs.db
+.DS_Store
