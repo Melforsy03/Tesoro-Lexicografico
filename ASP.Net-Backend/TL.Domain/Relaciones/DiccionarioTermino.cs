@@ -9,9 +9,9 @@ namespace TL.Domain.Relaciones
 {
     public class DiccionarioTermino
     {
-        public int DicEntId { get; set; }
-        public int DicId { get; set;}
-        public int TerId { get; set; }
+        public int IdDicTer { get; set; }
+        public int IdDic { get; set;}
+        public int IdTer { get; set; }
         public string NomEntrada {  get; set; }
         public bool EsSuperEntrada { get; set; }
         public bool EsSubEntrada { get; set; }

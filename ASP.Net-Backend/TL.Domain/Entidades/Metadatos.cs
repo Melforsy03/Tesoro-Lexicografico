@@ -10,6 +10,7 @@ namespace TL.Domain.Entidades
     {
         public int IdMet {  get; set; }
         public int IdDic {  get; set; }
+        public Diccionario Diccionario { get; set; }
         public string Titulo { get; set; }
         public string TituloCompleto {  get; set; }
         public string Autor {  get; set; }

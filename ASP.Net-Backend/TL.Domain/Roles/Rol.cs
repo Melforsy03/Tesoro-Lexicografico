@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TL.Domain.Roles
 {
-    public class Rol
+    public class Role
     {
         public const string Editor = "Editor";
     }

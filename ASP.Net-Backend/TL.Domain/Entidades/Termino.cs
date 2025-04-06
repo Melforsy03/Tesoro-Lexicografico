@@ -8,7 +8,7 @@ namespace TL.Domain.Entidades
 {
     public class Termino
     {
-        public int TerId {  get; set; }
+        public int IdTer {  get; set; }
         public int NomReg {  get; set; }
     }
 }
