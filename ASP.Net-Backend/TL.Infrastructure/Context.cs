@@ -7,9 +7,12 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Diagnostics;
 using TL.Domain.Entidades;
 using TL.Domain.Relaciones;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using SchoolManagement.Infrastructure.Identity;
+
 namespace TL.Infrastructure
 {
-    public class Context: DbContext
+    public class Context : IdentityDbContext<User>
     {
         public Context(DbContextOptions<Context> options) : base(options)
         {
@@ -17,7 +20,7 @@ namespace TL.Infrastructure
 
         public DbSet<Acepcion> Acepciones { get; set; }
         public DbSet<Diccionario> Diccionarios { get; set; }
-        public DbSet<Editor > Editores { get; set; }
+        public DbSet<Editor> Editores { get; set; }
         public DbSet<Metadatos> Metadatos { get; set; }
         public DbSet<Termino> Terminos { get; set; }
         public DbSet<DiccionarioTermino> Entradas {  get; set; }
