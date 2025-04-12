@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
-namespace SchoolManagement.Infrastructure.Identity
+namespace TL.Infrastructure.Identity
 {
     public interface IIdentityManager
     {

@@ -1,11 +1,22 @@
+using Microsoft.EntityFrameworkCore;
+using MiProyecto.Application.Interfaces;
+using MiProyecto.Infrastructure.Persistence;
+using MiProyecto.Infrastructure.Persistence.Repositories;
+
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
+
+AppContext.SetSwitch("Npgsql.EnableLegacyTimestampBehavior", true);
 
 builder.Services.AddControllers();
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
+
+builder.Services.AddDbContext<ApplicationDbContext>(options =>
+    options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
+
+builder.Services.AddScoped<IAcepcionService, AcepcionService , IDictionaryService , DictionaryService ,IEditorService, EditorService, IMetadatosService ,MetaDatosService , ITerminoService , TerminoService , IDictionaryTerminoService , DictionaryTerminoService ,ISubEntradaService, SubEntradaService>();
 
 var app = builder.Build();
 

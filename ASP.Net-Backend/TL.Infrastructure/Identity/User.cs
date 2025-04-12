@@ -7,10 +7,10 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using TL.Domain.Roles;
 
-namespace SchoolManagement.Infrastructure.Identity
+namespace TL.Infrastructure.Identity
 {
     public class User : IdentityUser
     {
-
+    
     }
 }

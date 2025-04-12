@@ -9,7 +9,7 @@ namespace TL.Domain.Entidades
     public class Editor
     {
         public int IdEd { get; set; }
-        public bool NomEd { get; set; }
+        public string NomEd { get; set; }
         public bool EsAdmin { get; set; }
     }
 }

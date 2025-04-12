@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore.Diagnostics;
 using TL.Domain.Entidades;
 using TL.Domain.Relaciones;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
-using SchoolManagement.Infrastructure.Identity;
+using TL.Infrastructure.Identity;
 
 namespace TL.Infrastructure
 {
