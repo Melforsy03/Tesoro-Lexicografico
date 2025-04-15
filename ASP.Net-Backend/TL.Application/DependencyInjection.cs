@@ -6,9 +6,8 @@ using System.Linq;
 using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
-using TL.Application.Interfaces;
-using TL.Application.Services;
-
+using TL.Application.ApplicationServices.Interfaces;
+using TL.Application.ApplicationServices.Servicio;
 
 namespace TL.Application
 {
@@ -16,6 +15,7 @@ namespace TL.Application
     {
         public static void AddApplicationServices(this IServiceCollection services)
         {
+            services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
             services.AddScoped<IAcepcionService, AcepcionService>();
             services.AddScoped<IDiccionarioTerminoService, DiccionarioTerminoService>();
             services.AddScoped<IDiccionarioService, DiccionarioService>();

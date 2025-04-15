@@ -1,4 +1,4 @@
-namespace TL.Application.DTOs
+namespace TL.Application.ApplicationServices.DTOs
 {
     public class MetadatosDTO
     {

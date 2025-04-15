@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
-using TL.Application.DTOs;
-using TL.Application.Interfaces;
+using TL.Application.ApplicationServices.DTOs;
+using TL.Application.ApplicationServices.Interfaces;
 
 namespace TL.Api.Controllers
 {
