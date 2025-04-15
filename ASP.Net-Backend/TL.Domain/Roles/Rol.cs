@@ -9,5 +9,6 @@ namespace TL.Domain.Roles
     public class Role
     {
         public const string Editor = "Editor";
+        public const string Admin = "Admin";
     }
 }
